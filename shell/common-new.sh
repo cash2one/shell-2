@@ -1,4 +1,12 @@
 #!/bin/bash
+composer_install(){
+    path=$1
+    cd $path
+    if [[ -d vendor ]];then
+        rm -rf vendor
+	fi
+    composer.phar install
+}
 
 writeLog(){
     Week=`date +%Y%W`
